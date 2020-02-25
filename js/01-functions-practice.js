@@ -33,7 +33,6 @@ findModulus(4, 10);
 
 let num = [];
 num  = window.prompt("Enter some numbers delineated by , ").split(','); // Clean out the commas
-if (num === [a-z,A-z])
 
 addNumbers(num);
 
