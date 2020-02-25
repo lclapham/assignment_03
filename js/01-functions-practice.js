@@ -23,8 +23,26 @@ function percentOf(num1, num2){
 percentOf(30, 100);
 
 //STEP 4
+function findModulus(num1, num2){
+    return console.log (num2%num1 + " Is the modulus of " + num1 + " and " + num2);
+}
+
+findModulus(4, 10);
 
 //STEP 5
 
+let num = [];
+num  = window.prompt("Enter some numbers delineated by , ").split(','); // Clean out the commas
+if (num === [a-z,A-z])
 
+addNumbers(num);
 
+function addNumbers(num) {
+   let totalSum = 0;
+   let objToNumber;
+   for (i = 0; i < num.length; i++) {  // iterate through the array and convert the string to int
+       objToNumber = parseInt(num[i]);
+       totalSum += objToNumber; //Add the values to make the total
+   }
+ console.log("Your numbers add up to " +totalSum);
+}
