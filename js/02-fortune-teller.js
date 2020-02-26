@@ -3,6 +3,24 @@ let jobTitle;
 let jobLocation;
 let numChildern;
 
+// Set up handers to make interaction with page
+var handlers = {
+    tellFortune: function () {
+        launchGame();
+        display.displayFortue();
+
+    }
+}
+
+// Setup how to display it
+var display = {
+    displayFortue: function () {
+        let fortunePara = document.querySelector('p');
+        fortunePara.innerHTML = fortuneResults;
+    }
+};
+
+// This is the game launcher.  Might be better to put in click handler
 function launchGame() {
     let numOfTimes = 3;
     for (i = 0; i < 3; i++) {
@@ -15,8 +33,9 @@ function launchGame() {
 
 }
 
+// This fucntion compiles the results of the fortune
 function tellFortune(partnersName, jobTitle, jobLocation, numChildern) {
-    window.document.write("You will be a " + jobTitle + " in " + jobLocation + ", and married to " + partnersName + " with " + numChildern + " kids." + "<br>");
+    return fortuneResults = "You will be a " + jobTitle + " in " + jobLocation + ", and married to " + partnersName + " with " + numChildern + " kids." + "<br>";
 }
 
 function nameGenerator() {
@@ -40,16 +59,16 @@ function locationGenerator() {
     // word lists
     let location = ["USA", "Canada", "India", "Thailand", "Australia", "Phillipines", "Russia", "China"];
     // generate name
-    jobLocation = location[Math.floor(Math.random() * location.length )];
+    jobLocation = location[Math.floor(Math.random() * location.length)];
     return jobLocation;
 }
 
 function childGenerator() {
     numChildern = (Math.floor(Math.random() * 10))
     if (numChildern === 0) {
-        numChildern = "no"
+        numChildern = "no"  // future update would be to dynamically change kids to kid when no or 1 kids is picked.
     } else {
         return numChildern;
     }
-   
+
 }
