@@ -12,11 +12,13 @@ var handlers = {
     }
 }
 
-// Setup how to display it
+// Setup  to display it
+// NOT IN KEEPING WITH THE ASSIGNEMENT CHECK THE CONSOLE LOG TO SEE IT PRINT 3X'S
 var display = {
     displayFortue: function () {
         let fortunePara = document.querySelector('p');
         fortunePara.innerHTML = fortuneResults;
+       
     }
 };
 
@@ -35,6 +37,7 @@ function launchGame() {
 
 // This fucntion compiles the results of the fortune
 function tellFortune(partnersName, jobTitle, jobLocation, numChildern) {
+    console.log("You will be a " + jobTitle + " in " + jobLocation + ", and married to " + partnersName + " with " + numChildern + " kids." );
     return fortuneResults = "You will be a " + jobTitle + " in " + jobLocation + ", and married to " + partnersName + " with " + numChildern + " kids." + "<br>";
 }
 
@@ -49,7 +52,7 @@ function nameGenerator() {
 
 function jobGenerator() {
     // word lists
-    let jobs = ["street Sweeper", "CEO", "web developer", "maid", "bartender", "Stripper", "Uber driver", "Astronaut", "Disk Jockey"];
+    let jobs = ["street Sweeper", "CEO", "web developer", "maid", "bartender", "stripper", "Uber driver", "astronaut", "disk jockey"];
     // generate name
     jobTitle = jobs[Math.floor(Math.random() * jobs.length)];
     return jobTitle;
@@ -57,7 +60,7 @@ function jobGenerator() {
 
 function locationGenerator() {
     // word lists
-    let location = ["USA", "Canada", "India", "Thailand", "Australia", "Phillipines", "Russia", "China"];
+    let location = ["USA", "Canada", "India", "Thailand", "Australia", "Phillipines", "Russia", "China", "Germany"];
     // generate name
     jobLocation = location[Math.floor(Math.random() * location.length)];
     return jobLocation;
